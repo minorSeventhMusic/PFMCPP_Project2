@@ -15,16 +15,16 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ Primitives:
+ Integer                int
+ Boolean                bool
+ Character              char
+ Floating Point         float
+ Double Floating Point  double
+ Valueless              void
+ Modifiers: //-> not really covered yet, just found them online
+ signed/unsigned 
+ short/long         
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -56,9 +56,24 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+    int numberOfPets = 0;
+    int emptyRooms = 1;
+    int usedComputers = 3;
+    bool isHungry = true;
+    bool hasPets = false;
+    bool hasProgrammedBefore = true;
+    char grade = 'A';
+    char houseNumber = 123;
+    char petName = 'C';
+    float squareMeters = 34.7f;
+    float percentageOfPopulation = 20.f;
+    float valueOfSomething = 0.134f;
+    double sizeOfShoes = 36.5;
+    double weightOfPet = 20.1;
+    double someNumber = 135.246;
     
-    
-    
+    ignoreUnused(numberOfPets, emptyRooms, usedComputers, isHungry, hasPets, hasProgrammedBefore, grade, houseNumber, petName, squareMeters, percentageOfPopulation, valueOfSomething, sizeOfShoes, weightOfPet, someNumber);
+
     ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
 }
 /*
@@ -74,43 +89,82 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int firstFunction(int firstNumber)
+{
+    ignoreUnused(firstNumber);
+    return {};
+}
 /*
  2)
  */
-
+int house(int rooms, float squareMeters, bool inhabited = true)
+{
+    ignoreUnused(rooms, squareMeters, inhabited);
+    return {};
+}
 /*
  3)
  */
-
+bool dinner(int peopleEating = 6, bool allHungry = false, float percentageHungry = 50.f)
+{
+    ignoreUnused(peopleEating, allHungry, percentageHungry);
+    return {};
+}
 /*
  4)
  */
-
+int uselessFunction (int aNumber, char aCharacter)
+{
+    ignoreUnused(aNumber, aCharacter);
+    return{};
+}
 /*
  5)
  */
-
+int nicePattern(int numberOfColours, bool hasCircles, bool hasSquares = true)
+{
+    ignoreUnused(numberOfColours, hasCircles, hasSquares);
+    return {};
+}
 /*
  6)
  */
-
+float someCalculation (float firstNumber, float secondNumber)
+{
+    ignoreUnused(firstNumber,secondNumber);
+    return {};
+}
 /*
  7)
  */
-
+double testOfSomething (bool hasTested, double result)
+{
+    ignoreUnused(hasTested, result);
+    return{};
+}
 /*
  8)
  */
-
+int lovelySong(bool songIsCatchy = true, int numberOfVerses = 4)
+{
+    ignoreUnused(songIsCatchy, numberOfVerses);
+    return{};
+}
 /*
  9)
  */
-
+int functionWithThreeNumbers(int firstNumber, int secondNumber, int thirdNumber = 8)
+{
+    ignoreUnused(firstNumber, secondNumber, thirdNumber);
+    return {};
+}
 /*
  10)
  */
-
+void lastFunction(bool noMoreFunctions = true)
+{
+    ignoreUnused(noMoreFunctions);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,25 +185,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    int firstFunctionCalled = firstFunction(1);
     //2)
-    
+    auto myHouse = house(5, 134.f);
     //3)
-    
+    auto thisDinner = dinner();
     //4)
-    
+    auto notSoUseless = uselessFunction(1, 'a');
     //5)
-    
+    auto myPattern = nicePattern(5, true, false);
     //6)
-    
+    auto difficultCalculation = someCalculation(4326.738f, 98264.57283f);
     //7)
-    
+    auto testOfThis = testOfSomething(true, 6.8);
     //8)
-    
+    auto myLovelySong = lovelySong(true, 8);
     //9)
-    
+    auto someThreeNumbers = functionWithThreeNumbers(1,2,3);
     //10)
-    
+    lastFunction();
+
+    ignoreUnused(firstFunctionCalled, myHouse, thisDinner, notSoUseless, myPattern, difficultCalculation, testOfThis, myLovelySong, someThreeNumbers);
     
     ignoreUnused(carRented);
     std::cout << "good to go!" << std::endl;
